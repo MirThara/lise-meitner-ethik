@@ -69,10 +69,9 @@ export const textsources = [
     },
     {
         authors: "",
-        title: "Executable Files",
+        title: "ausführbare Dateien (.EXE, .APP) wurden mit Hilfe von ChatGPT erstellt",
         source: "",
         date: "20.09.2025",
-        info: "Executables (.EXE, .APP) have been created under help of ChatGPT"
     }
 ];
 
