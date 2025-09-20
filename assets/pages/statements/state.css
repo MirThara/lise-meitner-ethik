@@ -1,0 +1,98 @@
+@import url('../../css/font.css');
+@import url('../../css/globals.css');
+@import url('../../css/button.css');
+
+body {
+    background: var(--blue-bg);
+    color: var(--lightblue);
+    font-family: 'Cavolini', Verdana, Geneva, Tahoma, sans-serif;
+}
+
+nav {
+    color: var(--lightblue);
+    text-align: center;
+    padding: 20px;
+    border-radius: 5px;
+    background: var(--nav);
+    backdrop-filter: blur(8px);
+    border: 1px solid var(--nav-border);
+    margin: 0 20px 20px 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2em;
+}
+
+.back {
+    position: absolute;
+    left: 0;
+    margin-left: 20px;
+}
+
+main {
+    margin-top: 20vh;
+}
+
+h3 {
+    text-align: left;
+    margin: 30px;
+}
+
+table {
+    position: relative;
+    width: 100vw;
+    padding: 20px;
+}
+
+td {
+    padding: 12px;
+    word-wrap: normal;
+}
+
+.mobile {
+    display: none;
+    padding: 30px;
+}
+
+.desktop {
+    display: block;
+}
+
+@media only screen and (max-width: 1000px) {
+    .mobile {
+        display: block;
+    }
+
+    .desktop {
+        display: none;
+    }
+}
+
+.download {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    padding: 20px;
+    margin: 20px;
+}
+
+.download a {
+    margin: 20px;
+}
+
+.text1,
+.text2 {
+    margin: auto;
+    margin-top: 20px;
+    max-width: 80vw;
+    line-height: 1.5;
+    padding: 20px;
+    border-radius: 5px;
+    background: #070f17;
+}

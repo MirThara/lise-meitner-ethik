@@ -1,0 +1,28 @@
+:root {
+    --accent: #EABD6E;
+    --blue-bg: #0D1B2A;
+    --lightblue: #C9E4FF;
+    --dark: #2e2e2e;
+
+    --glow: #0D1B2A radial-gradient(ellipse farthest-side,
+            rgba(110, 132, 154, 1) 0%,
+            #0D1B2A 100%);
+    --nav: rgba(13, 27, 42, 0.3);
+    --nav-border: rgba(255, 255, 255, 0.08);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+    color: var(--lightblue);
+}
+
+a:hover {
+    cursor: pointer;
+    color: var(--accent);
+}

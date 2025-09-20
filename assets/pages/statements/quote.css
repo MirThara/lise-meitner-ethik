@@ -1,0 +1,96 @@
+.container {
+    width: 100vw;
+    padding: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/*******QUOTE******/
+.quote {
+    width: 50%;
+}
+
+.blockquote-wrapper {
+    display: flex;
+    padding: 0 20px;
+}
+
+.blockquote {
+    position: relative;
+    font-family: 'Cavolini', 'Barlow Condensed', sans-serif;
+    margin: 80px auto;
+    align-self: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.blockquote h1 {
+    font-family: 'Cavolini', 'Barlow Condensed', cursive;
+    position: relative;
+    /* for pseudos */
+    color: var(--lightblue);
+    font-size: 0.5rem;
+    font-weight: normal;
+    line-height: 1;
+    margin: 0;
+    border: 2px solid var(--lightblue);
+    border: solid 2px;
+    border-radius: 20px;
+    padding: 25px;
+}
+
+.blockquote h1:after {
+    content: "";
+    position: absolute;
+    border: 2px solid var(--lightblue);
+    border-radius: 0 100% 0 0;
+    width: 60px;
+    height: 60px;
+    bottom: -62px;
+    left: 50px;
+    border-bottom: none;
+    border-left: none;
+    z-index: 3;
+}
+
+.highlight {
+    color: var(--accent);
+}
+
+.blockquote h1:before {
+    content: "";
+    position: absolute;
+    width: 80px;
+    border: 6px solid var(--blue-bg);
+    bottom: -3px;
+    left: 50px;
+    z-index: 2;
+}
+
+@media all and (min-width: 600px) {
+    .blockquote h1 {
+        font-size: 0.97rem;
+        line-height: 1.2;
+    }
+}
+
+.blockquote h4 {
+    position: relative;
+    color: var(--accent);
+    font-size: 1.3rem;
+    font-weight: 400;
+    line-height: 1.2;
+    margin: 0;
+    padding-top: 15px;
+    z-index: 1;
+    margin-left: 150px;
+    padding-left: 12px;
+}
+
+
+.blockquote h4:first-letter {
+    margin-left: -12px;
+}

@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <!-- Set generals -->
+    <meta charset="UTF-8">
+    <meta name="theme-color" content="#0d1b2a">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- include Manifest and PWA contents -->
+    <link rel="manifest" href="manifest.json">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="apple-touch-icon" href="/icons/icon-192.png">
+    <!-- include GSAP (GSAP, ScrollTrigger, MotionPathPlugin, DrawSVGPlugin, ScrollToPlugin) and Modelviewer for USDZ/GLB -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/MotionPathPlugin.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/DrawSVGPlugin.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollToPlugin.min.js"></script>
+    <script type="module" src="https://cdn.jsdelivr.net/npm/@google/model-viewer/dist/model-viewer.min.js"></script>
+
+    <!-- include Video Player JS -->
+    <script src="assets/js/videoplayer.js"></script>
+
+    <!-- include general styles -->
+    <link rel="stylesheet" href="assets/css/styleM.css">
+    <style>
+        .text20 {
+            position: absolute;
+        }
+    </style>
+    <title>Lise Meitner</title>
+</head>
+
+<body>
+    <header class="header">
+        <h1>Lise Meitner</h1>
+    </header>
+    <!-- <div class="error" id="error">
+        <span>
+            Hinweis! Durch das aktuelle Seitenverhältnis kann der Inhalt dieser Website leider
+            nicht korrekt angezeigt werden. Dies kann zu schwerwiegenden Verzerrungen der Seite führen. <br>
+            Alternativ kann die mobile Version (weniger Funktionen) dieser Seite hier abgerufen werden:
+            <a href="mobile.html">Lise Meitner - mobil</a>
+        </span>
+        <button class="hide" id="hide">Ausblenden</button>
+    </div> -->
+    <section id="top">
+        <div class="quote">
+            <div class="blockquote-wrapper">
+                <div class="blockquote">
+                    <h1>
+                        Ein guter Forscher muß nach der <span class="highlight">Wahrheit streben</span> und
+                        wissen, daß er ihr immer nur nahe kommen kann. Er
+                        muß <span class="highlight">Tatsachen anerkennen</span>, gleichgültig, ob diese seinem
+                        Denken und seinen Wünschen entgegenkommen oder nicht, das heißt, er muß <span
+                            class="highlight">selbstlos</span> sein.
+                        Und er muß die Fähigkeit haben, sich über das <span class="highlight">Naturgeschehen zu
+                            wundern</span> und es zu <span class="highlight">bewundern</span>.
+                    </h1>
+                    <h4>&mdash;Lise Meitner</h4>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="curiculum" class="curiculum">
+        <div class="mobile"></div>
+        <div class="desktop">
+            <h1>Biographie</h1>
+            <svg id="svg-stage" width="386" height="3060" viewBox="0 0 386 3060" fill="none"
+                xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <g id="curiculum">
+                    <path class="theLine"
+                        d="M89.4989 -1.29386e-05L89.4988 1530C89.4988 1530 69.5 3005.95 89.4988 3019.5C134.085 3049.71 385.5 3060.5 385.5 3060.5"
+                        stroke="#C9E4FF" stroke-width="5" />
+                    <path class="ball ball01"
+                        d="M33.277 3019.55C36.7437 3019.55 39.554 3016.74 39.554 3013.28C39.554 3009.81 36.7437 3007 33.277 3007C29.8103 3007 27 3009.81 27 3013.28C27 3016.74 29.8103 3019.55 33.277 3019.55Z"
+                        fill="#C9E4FF" />
+                    <g class="text text20">
+                        <text id="1968" fill="#C9E4FF" xml:space="preserve" style="white-space: pre"
+                            font-family="Verdana" font-size="20" font-weight="bold" letter-spacing="0em">
+                            <tspan x="11" y="2996.95">1968</tspan>
+                        </text>
+                        <text id="Meitner stirbt im Alter von 90 Jahren in Cambridge" fill="#C9E4FF"
+                            xml:space="preserve" style="white-space: pre" font-family="Verdana" font-size="13"
+                            letter-spacing="0em">
+                            <tspan x="105" y="2977.17">Meitner stirbt im Alter von 90 Jahren </tspan>
+                            <tspan x="105" y="2993.17">in Cambridge</tspan>
+                        </text>
+                    </g>
+                    <g class="text text19">
+                        <text id="1966" fill="#C9E4FF" xml:space="preserve" style="white-space: pre"
+                            font-family="Verdana" font-size="20" font-weight="bold" letter-spacing="0em">
+                            <tspan x="11" y="2895.95">1966</tspan>
+                        </text>
+                        <text
+                            id="Meitner, Hahn und Stra&#195;&#159;mann erhalten den Enrico-Fermi-Preis der Atomenergiekomsmision der USA"
+                            fill="#C9E4FF" xml:space="preserve" style="white-space: pre" font-family="Verdana"
+                            font-size="13" letter-spacing="0em">
+                            <tspan x="105" y="2876.17">Meitner, Hahn und Stra&#xdf;mann </tspan>
+                            <tspan x="105" y="2892.17">erhalten den Enrico-Fermi-Preis der </tspan>
+                            <tspan x="105" y="2908.17">Atomenergiekomsmision der USA</tspan>
+                        </text>
+                    </g>
+                    <g class="text text18">
+                        <text id="1959" fill="#C9E4FF" xml:space="preserve" style="white-space: pre"
+                            font-family="Verdana" font-size="20" font-weight="bold" letter-spacing="0em">
+                            <tspan x="11" y="2811.95">1959</tspan>
+                        </text>
+                        <text id="Meitner zieht in nach Cambridge um und geht in den Ruhestand" fill="#C9E4FF"
+                            xml:space="preserve" style="white-space: pre" font-family="Verdana" font-size="13"
+                            letter-spacing="0em">
+                            <tspan x="105" y="2792.17">Meitner zieht in nach Cambridge um </tspan>
+                            <tspan x="105" y="2808.17">und geht in den Ruhestand</tspan>
+                        </text>
+                    </g>
+                    <g class="text text17">
+                        <text id="1959_2" fill="#C9E4FF" xml:space="preserve" style="white-space: pre"
+                            font-family="Verdana" font-size="20" font-weight="bold" letter-spacing="0em">
+                            <tspan x="11" y="2713.95">1959</tspan>
+                        </text>
+                        <text id="Meitner wird mit dem Bundesverdienstkreuz ausgezeichnet" fill="#C9E4FF"
+                            xml:space="preserve" style="white-space: pre" font-family="Verdana" font-size="13"
+                            letter-spacing="0em">
+                            <tspan x="105" y="2702.17">Meitner wird mit dem </tspan>
+                            <tspan x="105" y="2718.17">Bundesverdienstkreuz ausgezeichnet</tspan>
+                        </text>
+                    </g>
+                    <g class="text text16">
+                        <text id="1955" fill="#C9E4FF" xml:space="preserve" style="white-space: pre"
+                            font-family="Verdana" font-size="20" font-weight="bold" letter-spacing="0em">
+                            <tspan x="12" y="2631.95">1955</tspan>
+                        </text>
+                        <text id="Meitner erh&#195;&#164;lt den ersten Otto-Hahn-Preis 1955" fill="#C9E4FF"
+                            xml:space="preserve" style="white-space: pre" font-family="Verdana" font-size="13"
+                            letter-spacing="0em">
+                            <tspan x="106" y="2623.17">Meitner erh&#xe4;lt den ersten Otto-Hahn-</tspan>
+                            <tspan x="106" y="2639.17">Preis 1955</tspan>
+                        </text>
+                    </g>
+                    <g class="text text15">
+                        <text id="1946" fill="#C9E4FF" xml:space="preserve" style="white-space: pre"
+                            font-family="Verdana" font-size="20" font-weight="bold" letter-spacing="0em">
+                            <tspan x="11" y="2464.95">1946</tspan>
+                        </text>
+                        <text
+                            id="Meitner h&#195;&#164;lt Gastvorlesungen in Washington und wird von der amerikanischen Presse zur Frau des Jahres gew&#195;&#164;hlt Hahn erh&#195;&#164;lt f&#195;&#188;r die Entdeckung der Kernspaltung zu Unrecht allein den Nobelpreis f&#195;&#188;r Chemie 1944, Meitner erhielt nie den Nobelpreis, wurde jedoch 48 Mal nominiert"
+                            fill="#C9E4FF" xml:space="preserve" style="white-space: pre" font-family="Verdana"
+                            font-size="13" letter-spacing="0em">
+                            <tspan x="105" y="2437.17">Meitner h&#xe4;lt Gastvorlesungen in </tspan>
+                            <tspan x="105" y="2453.17">Washington und wird von der </tspan>
+                            <tspan x="105" y="2469.17">amerikanischen Presse zur Frau des </tspan>
+                            <tspan x="105" y="2485.17">Jahres gew&#xe4;hlt&#10;</tspan>
+                            <tspan x="105" y="2501.17">&#10;</tspan>
+                            <tspan x="105" y="2517.17">Hahn erh&#xe4;lt f&#xfc;r die Entdeckung der </tspan>
+                            <tspan x="105" y="2533.17">Kernspaltung zu Unrecht allein den </tspan>
+                            <tspan x="105" y="2549.17">Nobelpreis f&#xfc;r Chemie 1944, Meitner </tspan>
+                            <tspan x="105" y="2565.17">erhielt nie den Nobelpreis, wurde </tspan>
+                            <tspan x="105" y="2581.17">jedoch 48 Mal nominiert</tspan>
+                        </text>
+                    </g>
+                    <g class="text text14">
+                        <text id="1939" fill="#C9E4FF" xml:space="preserve" style="white-space: pre"
+                            font-family="Verdana" font-size="20" font-weight="bold" letter-spacing="0em">
+                            <tspan x="11" y="2201.95">1939</tspan>
+                        </text>
+                        <text
+                            id="Hahn und Stra&#195;&#159;mann sto&#195;&#159;en auf einige Ungereimtheiten in ihren Beobachtungen und bitten Meitner um Hilfe, die zusammen mit ihrem Neffen Otto Frisch die erste theoretische Deutung der Kernspaltung auf Grundlage der Relativit&#195;&#164;tstheorie liefert"
+                            fill="#C9E4FF" xml:space="preserve" style="white-space: pre" font-family="Verdana"
+                            font-size="13" letter-spacing="0em">
+                            <tspan x="105" y="2142.17">Hahn und Stra&#xdf;mann sto&#xdf;en auf </tspan>
+                            <tspan x="105" y="2158.17">einige Ungereimtheiten in ihren </tspan>
+                            <tspan x="105" y="2174.17">Beobachtungen und bitten Meitner um </tspan>
+                            <tspan x="105" y="2190.17">Hilfe, die zusammen mit ihrem Neffen </tspan>
+                            <tspan x="105" y="2206.17">Otto Frisch die erste theoretische </tspan>
+                            <tspan x="105" y="2222.17">Deutung der Kernspaltung auf </tspan>
+                            <tspan x="105" y="2238.17">Grundlage der Relativit&#xe4;tstheorie </tspan>
+                            <tspan x="105" y="2254.17">liefert</tspan>
+                        </text>
+                        <g id="zerfall text19">
+                            <text id="Abb.9: Von Meitner erstelltes Schema zur Kernspaltung"
+                                transform="translate(129.752 2269)" fill="#C9E4FF" xml:space="preserve"
+                                style="white-space: pre" font-family="Verdana" font-size="10" letter-spacing="0em">
+                                <tspan x="0" y="9.97705">Abb.9: Von Meitner erstelltes </tspan>
+                                <tspan x="0" y="21.9771">Schema zur Kernspaltung</tspan>
+                            </text>
+                            <g id="Group 68">
+                                <g id="Group 67">
+                                    <rect id="image 14" x="98" y="2283.7" width="260.405" height="132.3"
+                                        fill="url(#pattern0_479_2127)" />
+                                </g>
+                            </g>
+                        </g>
+                    </g>
+                    <g class="text text13">
+                        <text id="1938" fill="#C9E4FF" xml:space="preserve" style="white-space: pre"
+                            font-family="Verdana" font-size="20" font-weight="bold" letter-spacing="0em">
+                            <tspan x="16" y="1997.95">1938</tspan>
+                        </text>
+                        <g
+                            id="Juli: Nach der Eroberung &#195;&#150;sterreichs durch die Nationalsozialisten ist Meitner nun als &#195;&#182;sterreichische Staatsb&#195;&#188;rgerin von den N&#195;&#188;rnberger Rassegesetzen betroffen und flieht durch Hahns Hilfe &#195;&#188;ber Holland nach Stockholm, wo sie eine bescheidene Anstellung am Nobel-Institut f&#195;&#188;r Physik findet Dezember: Hahn und Stra&#195;&#159;mann entdecken die Kernspaltung von Uran zu Thorium, wozu Meitner durch briefliche Anregungen ma&#195;&#159;geblich beigetragen hat">
+                            <text fill="#C9E4FF" xml:space="preserve" style="white-space: pre" font-family="Verdana"
+                                font-size="13" font-weight="bold" letter-spacing="0em">
+                                <tspan x="110" y="1874.17">Juli:</tspan>
+                                <tspan x="110" y="2034.17">Dezember:</tspan>
+                            </text>
+                            <text fill="#C9E4FF" xml:space="preserve" style="white-space: pre" font-family="Verdana"
+                                font-size="13" letter-spacing="0em">
+                                <tspan x="140.608" y="1874.17"> Nach der Eroberung &#xd6;sterreichs </tspan>
+                                <tspan x="110" y="1890.17">durch die Nationalsozialisten ist </tspan>
+                                <tspan x="110" y="1906.17">Meitner nun als &#xf6;sterreichische </tspan>
+                                <tspan x="110" y="1922.17">Staatsb&#xfc;rgerin von den N&#xfc;rnberger </tspan>
+                                <tspan x="110" y="1938.17">Rassegesetzen betroffen und flieht </tspan>
+                                <tspan x="110" y="1954.17">durch Hahns Hilfe &#xfc;ber Holland nach </tspan>
+                                <tspan x="110" y="1970.17">Stockholm, wo sie eine bescheidene </tspan>
+                                <tspan x="110" y="1986.17">Anstellung am Nobel-Institut f&#xfc;r </tspan>
+                                <tspan x="110" y="2002.17">Physik findet&#10;</tspan>
+                                <tspan x="110" y="2018.17">&#10;</tspan>
+                                <tspan x="188.99" y="2034.17"> Hahn und Stra&#xdf;mann </tspan>
+                                <tspan x="110" y="2050.17">entdecken die Kernspaltung von Uran </tspan>
+                                <tspan x="110" y="2066.17">zu Thorium, wozu Meitner durch </tspan>
+                                <tspan x="110" y="2082.17">briefliche Anregungen ma&#xdf;geblich </tspan>
+                                <tspan x="110" y="2098.17">beigetragen hat</tspan>
+                            </text>
+                        </g>
+                    </g>
+                    <g class="text text12">
+                        <text id="1934" fill="#C9E4FF" xml:space="preserve" style="white-space: pre"
+                            font-family="Verdana" font-size="20" font-weight="bold" letter-spacing="0em">
+                            <tspan x="16" y="1618.95">1934</tspan>
+                        </text>
+                        <text
+                            id="Meitner, Hahn und deren Kollege Stra&#195;&#159;mann beginnen mit Forschungen zu Transuraniumelementen (Elemente, die im PSE nach Uran stehen)"
+                            fill="#C9E4FF" xml:space="preserve" style="white-space: pre" font-family="Verdana"
+                            font-size="13" letter-spacing="0em">
+                            <tspan x="110" y="1603.17">Meitner, Hahn und deren Kollege </tspan>
+                            <tspan x="110" y="1619.17">Stra&#xdf;mann beginnen mit Forschungen </tspan>
+                            <tspan x="110" y="1635.17">zu Transuraniumelementen </tspan>
+                            <tspan x="110" y="1651.17">(Elemente, die im PSE nach Uran </tspan>
+                            <tspan x="110" y="1667.17">stehen)</tspan>
+                        </text>
+                        <g id="desk text17">
+                            <rect id="desk" x="123" y="1693.63" width="219" height="138.385"
+                                fill="url(#pattern1_479_2127)" />
+                            <text id="Abb.6: Labortisch von Meitner, Hahn und Stra&#195;&#159;mann"
+                                transform="translate(147 1678)" fill="#C9E4FF" xml:space="preserve"
+                                style="white-space: pre" font-family="Verdana" font-size="7" letter-spacing="0em">
+                                <tspan x="0" y="7.28394">Abb.6: Labortisch von Meitner, Hahn und </tspan>
+                                <tspan x="0" y="16.2839">Stra&#xdf;mann</tspan>
+                            </text>
+                        </g>
+                    </g>
+                    <g class="text text11">
+                        <text id="1933" fill="#C9E4FF" xml:space="preserve" style="white-space: pre"
+                            font-family="Verdana" font-size="20" font-weight="bold" letter-spacing="0em">
+                            <tspan x="16" y="1544.95">1933</tspan>
+                        </text>
+                        <text
+                            id="Nachdem die NSDAP die Macht in Deutschland &#195;&#188;bernommen hat, wird Meitner die Lehrerlaubnis entzogen"
+                            fill="#C9E4FF" xml:space="preserve" style="white-space: pre" font-family="Verdana"
+                            font-size="13" letter-spacing="0em">
+                            <tspan x="110" y="1521.17">Nachdem die NSDAP die Macht in </tspan>
+                            <tspan x="110" y="1537.17">Deutschland &#xfc;bernommen hat, wird </tspan>
+                            <tspan x="110" y="1553.17">Meitner die Lehrerlaubnis entzogen</tspan>
+                        </text>
+                    </g>
+                    <g class="text text10">
+                        <text id="1926" fill="#C9E4FF" xml:space="preserve" style="white-space: pre"
+                            font-family="Verdana" font-size="20" font-weight="bold" letter-spacing="0em">
+                            <tspan x="17" y="1456.95">1926</tspan>
+                        </text>
+                        <text
+                            id="In Berlin wird Meitner au&#195;&#159;erordentliche Professorin und damit besonders gew&#195;&#188;rdigt"
+                            fill="#C9E4FF" xml:space="preserve" style="white-space: pre" font-family="Verdana"
+                            font-size="13" letter-spacing="0em">
+                            <tspan x="111" y="1437.17">In Berlin wird Meitner </tspan>
+                            <tspan x="111" y="1453.17">au&#xdf;erordentliche Professorin und </tspan>
+                            <tspan x="111" y="1469.17">damit besonders gew&#xfc;rdigt</tspan>
+                        </text>
+                    </g>
+                    <g class="text text09">
+                        <text id="1922" fill="#C9E4FF" xml:space="preserve" style="white-space: pre"
+                            font-family="Verdana" font-size="20" font-weight="bold" letter-spacing="0em">
+                            <tspan x="16" y="1357.95">1922</tspan>
+                        </text>
+                        <text
+                            id="Meitner habitiliert sich als erste Frau in Physik und wird international durch ihre Forschungen an radioaktiver Strahlung und den damit verbundenen Kernprozessen bekannt"
+                            fill="#C9E4FF" xml:space="preserve" style="white-space: pre" font-family="Verdana"
+                            font-size="13" letter-spacing="0em">
+                            <tspan x="110" y="1330.17">Meitner habitiliert sich als erste Frau </tspan>
+                            <tspan x="110" y="1346.17">in Physik und wird international durch </tspan>
+                            <tspan x="110" y="1362.17">ihre Forschungen an radioaktiver </tspan>
+                            <tspan x="110" y="1378.17">Strahlung und den damit </tspan>
+                            <tspan x="110" y="1394.17">verbundenen Kernprozessen bekannt</tspan>
+                        </text>
+                    </g>
+                    <g class="text text08">
+                        <text id="1920" fill="#C9E4FF" xml:space="preserve" style="white-space: pre"
+                            font-family="Verdana" font-size="15" font-weight="bold" letter-spacing="0em">
+                            <tspan x="16" y="1272.97">1920</tspan>
+                        </text>
+                        <text
+                            id="In der Weimarer Republik k&#195;&#182;nnen erstmals auch Frauen Habitilationen (Doktorarbeiten) einreichen"
+                            fill="#C9E4FF" xml:space="preserve" style="white-space: pre" font-family="Verdana"
+                            font-size="10" letter-spacing="0em">
+                            <tspan x="103" y="1263.98">In der Weimarer Republik k&#xf6;nnen erstmals auch </tspan>
+                            <tspan x="103" y="1275.98">Frauen Habitilationen (Doktorarbeiten) einreichen</tspan>
+                        </text>
+                    </g>
+                    <g class="text text07">
+                        <text id="1918" fill="#C9E4FF" xml:space="preserve" style="white-space: pre"
+                            font-family="Verdana" font-size="20" font-weight="bold" letter-spacing="0em">
+                            <tspan x="16" y="1132.95">1918</tspan>
+                        </text>
+                        <g
+                            id="Hahn und Meitner entdecken Protactinium als 91. Element, daraufhin &#195;&#188;bernimmt Meitner die Leitung der radiophysikalischen Abteilung am KWI">
+                            <text fill="#C9E4FF" xml:space="preserve" style="white-space: pre" font-family="Verdana"
+                                font-size="13" letter-spacing="0em">
+                                <tspan x="110" y="1097.17">Hahn und Meitner entdecken </tspan>
+                                <tspan x="204.301" y="1113.17"> als 91. Element, </tspan>
+                                <tspan x="110" y="1129.17">daraufhin &#xfc;bernimmt Meitner die </tspan>
+                                <tspan x="110" y="1145.17">Leitung der radiophysikalischen </tspan>
+                                <tspan x="110" y="1161.17">Abteilung am KWI</tspan>
+                            </text>
+                            <text fill="#C9E4FF" xml:space="preserve" style="white-space: pre" font-family="Verdana"
+                                font-size="13" font-weight="bold" letter-spacing="0em">
+                                <tspan x="110" y="1113.17">Protactinium</tspan>
+                            </text>
+                        </g>
+                        <!-- <rect id="modell text11" x="7.5" y="1164.5" width="76" height="60" stroke="#C9E4FF" /> -->
+                        <foreignObject xmlns="http://www.w3.org/1999/xhtml" class="text text07" x="130" y="1127.5"
+                            width="200" height="200" stroke="#FFFCE1">
+                            <div xmlns="http://www.w3.org/1999/xhtml" style="width:100%; height:100%;">
+                                <model-viewer class="m11" src="assets/models/element_091_protactinium.glb"
+                                    ios-src="assets/models/element_091_protactinium.usdz"
+                                    alt="3D Modell eines Wasserstoffatoms" ar ar-modes="scene-viewer webxr quick-look"
+                                    ar-scale="auto" autoplay="true" shadow-intensity="1" auto-rotate
+                                    style="width:80%; height:80%;">
+                                </model-viewer>
+                            </div>
+                        </foreignObject>
+                    </g>
+                    <g class="text text06">
+                        <text id="1913" fill="#C9E4FF" xml:space="preserve" style="white-space: pre"
+                            font-family="Verdana" font-size="20" font-weight="bold" letter-spacing="0em">
+                            <tspan x="12" y="1053.95">1913</tspan>
+                        </text>
+                        <text
+                            id="Das Kaiser-Wilhelm-Institut f&#195;&#188;r Chemie (KWI) nimmt Meitner als wissenschaftl. Mitglied auf"
+                            fill="#C9E4FF" xml:space="preserve" style="white-space: pre" font-family="Verdana"
+                            font-size="13" letter-spacing="0em">
+                            <tspan x="106" y="1014.17">Das Kaiser-Wilhelm-Institut f&#xfc;r </tspan>
+                            <tspan x="106" y="1030.17">Chemie (KWI) nimmt Meitner als </tspan>
+                            <tspan x="106" y="1046.17">wissenschaftl. Mitglied auf</tspan>
+                        </text>
+                        <g id="kwi">
+                            <rect id="image 10" y="847.01" width="223.935" height="157.246"
+                                transform="rotate(-4.00001 0 847.01)" fill="url(#pattern2_479_2127)" />
+                            <text id="Abb.4: Kaiser-Wilhelm -Institut Berlin"
+                                transform="translate(6.80957 835.688) rotate(-4.00001)" fill="#C9E4FF"
+                                xml:space="preserve" style="white-space: pre" font-family="Verdana" font-size="7"
+                                letter-spacing="0em">
+                                <tspan x="0" y="7.28394">Abb.4: Kaiser-Wilhelm -Institut Berlin</tspan>
+                            </text>
+                        </g>
+                    </g>
+                    <g class="text text05">
+                        <text id="1912" fill="#C9E4FF" xml:space="preserve" style="white-space: pre"
+                            font-family="Verdana" font-size="20" font-weight="bold" letter-spacing="0em">
+                            <tspan x="16" y="657.954">1912</tspan>
+                        </text>
+                        <text
+                            id="als erste Frau bekommt Lise Meitner eine Stelle an der Universit&#195;&#164;t in Berlin als Assistentin Plancks"
+                            fill="#C9E4FF" xml:space="preserve" style="white-space: pre" font-family="Verdana"
+                            font-size="13" letter-spacing="0em">
+                            <tspan x="110" y="638.17">als erste Frau bekommt Lise Meitner </tspan>
+                            <tspan x="110" y="654.17">eine Stelle an der Universit&#xe4;t in Berlin </tspan>
+                            <tspan x="110" y="670.17">als Assistentin Plancks</tspan>
+                        </text>
+                        <g id="uniberlin text07">
+                            <rect id="Uni Berlin" x="138.004" y="718.663" width="198.152" height="140.873"
+                                transform="rotate(-5 138.004 718.663)" fill="url(#pattern3_479_2127)" />
+                            <text id="Abb.3: Universit&#195;&#164;t Berlin um 1900"
+                                transform="matrix(0.996184 -0.0872796 0.0870321 0.996206 136 706.901)" fill="#C9E4FF"
+                                xml:space="preserve" style="white-space: pre" font-family="Verdana" font-size="7"
+                                letter-spacing="0em">
+                                <tspan x="0" y="7.28394">Abb.3: Universit&#xe4;t Berlin um 1900</tspan>
+                            </text>
+                        </g>
+                    </g>
+                    <g class="text text04">
+                        <text id="1907" fill="#C9E4FF" xml:space="preserve" style="white-space: pre"
+                            font-family="Verdana" font-size="20" font-weight="bold" letter-spacing="0em">
+                            <tspan x="16" y="549.954">1907</tspan>
+                        </text>
+                        <text
+                            id="erste Publikationen &#195;&#188;ber Alpha- und Beta-Strahlung, au&#195;&#159;erdem Wechsel nach Berlin, um Fortbildung bei Max Planck anzunehmen, setzt ihre Arbeit im chem. Labor mit Otto Hahn fort"
+                            fill="#C9E4FF" xml:space="preserve" style="white-space: pre" font-family="Verdana"
+                            font-size="13" letter-spacing="0em">
+                            <tspan x="110" y="506.17">erste Publikationen &#xfc;ber Alpha- und </tspan>
+                            <tspan x="110" y="522.17">Beta-Strahlung, au&#xdf;erdem Wechsel </tspan>
+                            <tspan x="110" y="538.17">nach Berlin, um Fortbildung bei Max </tspan>
+                            <tspan x="110" y="554.17">Planck anzunehmen, setzt ihre Arbeit </tspan>
+                            <tspan x="110" y="570.17">im chem. Labor mit Otto Hahn fort</tspan>
+                        </text>
+                        <g id="planck text05">
+                            <rect id="image 9" width="73.986" height="103.894"
+                                transform="matrix(0.956229 -0.29262 0.292123 0.956381 2.70703 414.956)"
+                                fill="url(#pattern4_479_2127)" />
+                            <text id="Abb.2: Max Planck"
+                                transform="matrix(0.956305 -0.292371 0.292372 0.956305 2.89453 407.61)" fill="#C9E4FF"
+                                xml:space="preserve" style="white-space: pre" font-family="Verdana" font-size="7"
+                                letter-spacing="0em">
+                                <tspan x="0" y="7.28394">Abb.2: Max Planck</tspan>
+                            </text>
+                        </g>
+                    </g>
+                    <g class="text text03">
+                        <text id="1906" fill="#C9E4FF" xml:space="preserve" style="white-space: pre"
+                            font-family="Verdana" font-size="20" font-weight="bold" letter-spacing="0em">
+                            <tspan x="16" y="360.954">1906</tspan>
+                        </text>
+                        <text
+                            id="Promoviert &#195;&#188;ber W&#195;&#164;rmeleitung inhomogener (unregelm&#195;&#164;&#195;&#159;iger) K&#195;&#182;rper und ist damit die zweite Frau weltweit, die eine Promotion ablegen kann."
+                            fill="#C9E4FF" xml:space="preserve" style="white-space: pre" font-family="Verdana"
+                            font-size="13" letter-spacing="0em">
+                            <tspan x="110" y="321.17">Promoviert &#xfc;ber W&#xe4;rmeleitung </tspan>
+                            <tspan x="110" y="337.17">inhomogener (unregelm&#xe4;&#xdf;iger) </tspan>
+                            <tspan x="110" y="353.17">K&#xf6;rper und ist damit die zweite Frau </tspan>
+                            <tspan x="110" y="369.17">weltweit, die eine Promotion ablegen </tspan>
+                            <tspan x="110" y="385.17">kann.</tspan>
+                        </text>
+                    </g>
+                    <g class="text text02">
+                        <text id="1901" fill="#C9E4FF" xml:space="preserve" style="white-space: pre"
+                            font-family="Verdana" font-size="20" font-weight="bold" letter-spacing="0em">
+                            <tspan x="16" y="213.954">1901</tspan>
+                        </text>
+                        <text id="Studium der Mathematik, Physik und Philosophie in Wien 1901-1906" fill="#C9E4FF"
+                            xml:space="preserve" style="white-space: pre" font-family="Verdana" font-size="13"
+                            letter-spacing="0em">
+                            <tspan x="110" y="256.17">Studium der Mathematik, Physik und </tspan>
+                            <tspan x="110" y="272.17">Philosophie in Wien 1901-1906</tspan>
+                        </text>
+                    </g>
+                    <g class="text text01">
+                        <g id="Group 70">
+                            <g id="Group 69">
+                                <text id="1878" fill="#C9E4FF" xml:space="preserve" style="white-space: pre"
+                                    font-family="Verdana" font-size="20" font-weight="bold" letter-spacing="0em">
+                                    <tspan x="16" y="42.9541">1878</tspan>
+                                </text>
+                                <text
+                                    id="Lise Meitner wird als Tochter des Rechtsanwalts Phillip Meitner und dessen Frau Hedwig Skowran in Wien geboren"
+                                    fill="#C9E4FF" xml:space="preserve" style="white-space: pre" font-family="Verdana"
+                                    font-size="13" letter-spacing="0em">
+                                    <tspan x="110" y="43.1702">Lise Meitner wird als Tochter des </tspan>
+                                    <tspan x="110" y="59.1702">Rechtsanwalts Phillip Meitner und </tspan>
+                                    <tspan x="110" y="75.1702">dessen Frau Hedwig Skowran in Wien </tspan>
+                                    <tspan x="110" y="91.1702">geboren</tspan>
+                                </text>
+                            </g>
+                        </g>
+                        <g id="Group 71">
+                            <g id="Group 69_2">
+                                <g id="meitner text01">
+                                    <rect id="meitner text01_2" x="8.10352" y="60.0421" width="87.0813" height="116.166"
+                                        transform="rotate(3.99999 8.10352 60.0421)" fill="url(#pattern5_479_2127)" />
+                                    <text id="Abb.1: Lise Meitner" transform="translate(12.0195 54) rotate(4)"
+                                        fill="#C9E4FF" xml:space="preserve" style="white-space: pre"
+                                        font-family="Verdana" font-size="7" letter-spacing="0em">
+                                        <tspan x="0" y="7.28394">Abb.1: Lise Meitner</tspan>
+                                    </text>
+                                </g>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+                <defs>
+                    <pattern id="pattern0_479_2127" patternContentUnits="objectBoundingBox" width="1" height="1">
+                        <use xlink:href="#image0_479_2127" transform="scale(0.000597015 0.0011751)" />
+                    </pattern>
+                    <pattern id="pattern1_479_2127" patternContentUnits="objectBoundingBox" width="1" height="1">
+                        <use xlink:href="#image1_479_2127" transform="scale(0.000285796 0.000452285)" />
+                    </pattern>
+                    <pattern id="pattern2_479_2127" patternContentUnits="objectBoundingBox" width="1" height="1">
+                        <use xlink:href="#image2_479_2127" transform="scale(0.000520916 0.00074184)" />
+                    </pattern>
+                    <pattern id="pattern3_479_2127" patternContentUnits="objectBoundingBox" width="1" height="1">
+                        <use xlink:href="#image3_479_2127" transform="scale(0.000520833 0.000732601)" />
+                    </pattern>
+                    <pattern id="pattern4_479_2127" patternContentUnits="objectBoundingBox" width="1" height="1">
+                        <use xlink:href="#image4_479_2127" transform="scale(0.00400069 0.002849)" />
+                    </pattern>
+                    <pattern id="pattern5_479_2127" patternContentUnits="objectBoundingBox" width="1" height="1">
+                        <use xlink:href="#image5_479_2127" transform="scale(0.002 0.00149925)" />
+                    </pattern>
+                    <image id="image0_479_2127" data-name="image.png" width="1675" height="851"
+                        preserveAspectRatio="none" href="assets/zerfall.png" />
+                    <image id="image1_479_2127" data-name="image.png" width="3499" height="2211"
+                        preserveAspectRatio="none" href="assets/desk.png" />
+                    <image id="image2_479_2127" data-name="image.png" width="1920" height="1348"
+                        preserveAspectRatio="none" href="assets/kwi.png" />
+                    <image id="image3_479_2127" data-name="image.png" width="1920" height="1365"
+                        preserveAspectRatio="none" href="assets/uniberlin.png" />
+                    <image id="image4_479_2127" data-name="image.png" width="250" height="351"
+                        preserveAspectRatio="none" href="assets/planck.png" />
+                    <image id="image5_479_2127" data-name="meitner.png" width="500" height="667"
+                        preserveAspectRatio="none" href="assets/meitner1.png" />
+                </defs>
+            </svg>
+        </div>
+    </section>
+
+    <section id="panels">
+        <section id="panels-container">
+            <div class="panel full-screen" id="fusion">
+                <h3>Entdeckung der Kernspaltung</h3>
+                <p>
+                    1938 bestrahlten Otto Hahn und Fritz Straßmann Uran mit Neutronen. Bereits seit 1934, als Enrico
+                    Fermi ähnliche Versuche durchführte, versuchten Meitner, Hahn und Straßmann, dessen
+                    Beobachtungen zu erklären. Die Annahme damals war, dass nach der Bestrahlung schwerere Elemente
+                    als Uran (sog. <i>Transurane</i>) entstehen müssten.
+                </p>
+                <p>
+                    Bei den Versuchen im Dezember 1938 konnten Hahn und Straßmann allerdings durch chemische
+                    Verfahren nur leichtere Elemente feststellen: Barium und Krypton. Damit stand Hahn vor einem
+                    großen Problem, da diese Beobachtung des "Zerplatzen" des Atomkerns im Widerspruch zu bisherigen
+                    physikalischen Beobachtungen stand.
+                </p>
+                <div class="column">
+                    <p class="left">
+                        Meitner und ihr Neffe Otto Frisch erkannten jedoch schnell, dass sich die Beobachtung mit dem
+                        bereits etablierten Tröpfchenmodell des Atoms erklären ließ:
+                        Das Tröpfchenmodell geht, wie der Name schon vermuten lässt, davon aus, dass sich der Atomkern
+                        wie ein Flüssigkeitstropfen verhält - also bspw. teilen lässt.
+                        Daraufhin entwickelten Meitner und Frisch die erste Theorie über die Kernspaltung, welche
+                        besagt, dass der Kern, welcher sich modellhaft als elektrisch geladener Flüssigkeitstropfen
+                        beschreiben lässt, durch ein eingefangenes Neutron so in Schwingungen versetzt wird, dass sich
+                        der Kern sich in zwei annähernd gleich große Fragmente teilt. Der "Größenunterschied" zwischen
+                        beiden Fragmenten wird dabei u.a. als Energie freigesetzt.
+                    </p>
+                    <div class="right video">
+                        <button class="play" onclick="playAnim()" id="play">Animation abspielen</button>
+                        <video id="fission" src="assets/fission.mp4">Der Browser unterstützt diesen Inhalt leider
+                            nicht.</video>
+                    </div>
+                </div>
+            </div>
+            <div class="panel full-screen" id="pa-231">
+                <b>Entdeckung von Protactinium-231</b>
+                1917 konnten Meitner und Hahn erfolgreich das Isotop Protactinium-231 isolieren, was einen
+                Meilenstein in der Erforschung radioaktiver Elemente darstellte. Ihre Arbeit half dabei, eine Lücke im
+                PSE zu schließen und radioaktiven Zerfall besser zu verstehen.
+            </div>
+            <div class="panel full-screen" id="mae">
+                <b>Meitner-Auger-Effekt</b>
+                Meitner entdeckte 1923 den später als Auger-Effekt bezeichneten Effekt, der beschreibt, wie Elektronen
+                von einem Atom emitiert werden können, ohne, dass es einer Strahlungsquelle bedarf. Da Pierre Auger den
+                Effekt zwei Jahre später unabhängig von Meitner entdeckte, wurde der Effekt nach ihm benannt.
+            </div>
+            <div class="panel full-screen" id="isomerie">
+                <b>Kernisomerie</b>
+                Meitner leitete Forschungen zu nuklearer Isomerie. Dabei geht es um Nuklide in verschiedenen
+                Energie-Zuständen und &beta;-Strahlung (Aussendung von Elektronen / Positronen)
+            </div>
+            <div class="panel full-screen" id="beta">
+                <b>Beta-Zerfall</b>
+                […]
+            </div>
+        </section>
+    </section>
+
+    <section class="fazit" id="fazit">
+        <h2>Zusammenfassung/Fazit</h2>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur, perspiciatis!
+    </section>
+
+    <footer class="footer" id="footer">
+        <div class="links-section">
+            <ol class="links">
+                <li class="link"><a href="">Seitenanfang</a></li>
+                <li class="link"><a href="#curiculum">Biographie</a></li>
+                <li class="li-f">
+                    wissenschaftliche Arbeit
+                    <ol>
+                        <li><a href="#fusion">Kernfusion</a></li>
+                        <li><a href="#pa231">Entdeckung von Protactinium-231</a></li>
+                        <li><a href="#mae">Meitner-Auger-Effekt</a></li>
+                        <li><a href="#isomerie">Kernisomerie</a></li>
+                        <li><a href="#beta">Beta-Zerfall</a></li>
+                    </ol>
+                </li>
+                <li class="link"><a href="#fazit">Fazit</a></li>
+                </ul>
+        </div>
+        <div class="statements">
+            <button class="footer-button" id="state-button">Statements</button>
+        </div>
+        <div class="sources">
+            <button class="footer-button" id="source-button">Quellen</button>
+        </div>
+    </footer>
+
+    <!-- <hr> -->
+
+    <!-- Include JS for Introanimation -->
+    <script src="mobile.js"></script>
+    <!-- register Service-Worker for PWA -->
+    <script>
+        if ("serviceworker" in navigator) {
+            navigator.serviceWorker.register("/service-worker.js")
+                .then(() => console.log("Service-Worker registriert"))
+                .catch(err => console.error("SW-Fehler:", err));
+        }
+    </script>
+</body>
+
+</html>
