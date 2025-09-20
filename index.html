@@ -1361,13 +1361,30 @@
     <!-- register Service-Worker for PWA -->
     <script>
         /***Preload***/
+        const messages = [
+            "Waiting for the one and only file…",
+            "Inviting Mrs. Meitner to come to our website…",
+            "Loading models…",
+            "Patience is a life skill…",
+            "Wrapping up…"
+        ];
+
+        let textIndex = 0;
+        const preloaderText = document.getElementById('preloader-text');
+
+        // Alle 1,5 Sekunden wechseln
+        const interval = setInterval(() => {
+            preloaderText.textContent = messages[textIndex];
+            textIndex = (textIndex + 1) % messages.length;
+        }, 750);
+
+        // Overlay ausblenden, wenn alles geladen ist
         window.addEventListener('load', function () {
+            clearInterval(interval); // Textwechsel stoppen
             const preloader = document.getElementById('preloader');
             preloader.style.opacity = '0';
             preloader.style.transition = 'opacity 0.5s ease';
-            setTimeout(() => {
-                preloader.style.display = 'none';
-            }, 500);
+            setTimeout(() => preloader.style.display = 'none', 500);
         });
     </script>
 </body>
