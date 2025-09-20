@@ -19,6 +19,7 @@
     <link rel="stylesheet" href="assets/css/quote.css">
     <link rel="stylesheet" href="assets/css/font.css">
     <link rel="stylesheet" href="assets/css/button.css">
+    <link rel="stylesheet" href="assets/css/preload.css">
     <title>Lise Meitner</title>
 </head>
 
@@ -1359,11 +1360,15 @@
     <script src="assets/js/main.js"></script>
     <!-- register Service-Worker for PWA -->
     <script>
-        if ("serviceworker" in navigator) {
-            navigator.serviceWorker.register("/service-worker.js")
-                .then(() => console.log("Service-Worker registriert"))
-                .catch(err => console.error("SW-Fehler:", err));
-        }
+        /***Preload***/
+        window.addEventListener('load', function () {
+            const preloader = document.getElementById('preloader');
+            preloader.style.opacity = '0';
+            preloader.style.transition = 'opacity 0.5s ease';
+            setTimeout(() => {
+                preloader.style.display = 'none';
+            }, 500);
+        });
     </script>
 </body>
 
