@@ -26,7 +26,7 @@
 <body>
     <div id="preloader">
         <div class="spinner"></div>
-        <p>Lade Inhalte...</p>
+        <p id="preloader-text">Lade Inhalte...</p>
     </div>
 
     <section id="top">
@@ -1374,7 +1374,7 @@
 
         // Alle 1,5 Sekunden wechseln
         const interval = setInterval(() => {
-            preloaderText.textContent = messages[textIndex];
+            preloaderText.innerHTML = messages[textIndex];
             textIndex = (textIndex + 1) % messages.length;
         }, 750);
 
