@@ -66,6 +66,13 @@ export const textsources = [
         title: "Namensgeberin des HMI - Lise Meitner",
         source: "https://www.helmholtz-berlin.de/zentrum/historie-hzb/vorgaengereinrichtung-hmi/lise-meitner_de.html",
         date: "17.09.2025"
+    },
+    {
+        authors: "",
+        title: "Executable Files",
+        source: "",
+        date: "20.09.2025",
+        info: "Executables (.EXE, .APP) have been created under help of ChatGPT"
     }
 ];
 
