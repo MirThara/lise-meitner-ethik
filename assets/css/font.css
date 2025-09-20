@@ -1,25 +1,25 @@
 @font-face {
-    font-family: Cavolini;
+    font-family: 'Cavolini';
     src: url('../fonts/cavolini.ttf') format('truetype');
     font-style: normal;
     font-weight: normal;
 }
 
 @font-face {
-    font-family: Cavolini;
+    font-family: 'Cavolini';
     src: url('../fonts/cavolinibold.ttf') format('truetype');
     font-weight: bold;
 }
 
 @font-face {
-    font-family: Cavolini;
+    font-family: 'Cavolini';
     src: url('../fonts/cavolinibolditalic.ttf') format('truetype');
     font-weight: bold;
     font-style: italic;
 }
 
 @font-face {
-    font-family: Cavolini;
+    font-family: 'Cavolini';
     src: url('../fonts/cavoliniitalic.ttf') format('truetype');
     font-weight: normal;
     font-style: italic;
