@@ -321,3 +321,12 @@ model-viewer {
 .desc {
     margin: 0 20px 0 20px;
 }
+
+.download {
+    display: flex;
+    flex-direction: column;
+}
+
+.download a{
+    margin: 20px 0 20px 0;
+}
