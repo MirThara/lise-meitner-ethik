@@ -56,6 +56,7 @@ const pulses = gsap
     .to(".text06", {}, 0.135)
     .to(".text07", {}, 0.17)
     .to(".text08", {}, 0.19)
+    .to(".text08-1", {}, 0.20)
     .to(".text09", {}, 0.22)
     .to(".text10", {}, 0.25)
     .to(".text11", {}, 0.28)
@@ -64,10 +65,12 @@ const pulses = gsap
     .to(".text14", {}, 0.33)
     .to(".text15", {}, 0.35)
     .to(".text15-1", {}, 0.37)
+    .to(".text15-2", {}, 0.385)
     .to(".text16", {}, 0.385)
     .to(".text17", {}, 0.417)
     .to(".text18", {}, 0.46)
     .to(".text19", {}, 0.503)
+    .to(".text19-5", {}, 0.503)
     .to(".text20", {}, 0.525)
     .to(".text21", {}, 0.565)
     .to(".text22", {}, 0.61)
@@ -78,6 +81,24 @@ const pulses = gsap
     .to(".text27", {}, 0.83)
     ;
 
+
+/**HOVER-Events 08-1, 15-2, 19-5**/
+const hoverMap = {
+    "text08-1": "text1WK",
+    "text15-2": "textNSDAP",
+    "text19-5": "text2WK"
+};
+
+Object.entries(hoverMap).forEach(([hoverClass, targetId]) => {
+    const hoverEl = document.querySelector(`.${hoverClass}`);
+    const targetEl = document.getElementById(targetId);
+
+    ["mouseover", "mouseleave"].forEach(event => {
+        hoverEl.addEventListener(event, () => {
+            targetEl.classList.toggle("visible");
+        });
+    });
+});
 
 // GSAP für Gesamtanimation der Timeline
 gsap.timeline({

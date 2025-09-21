@@ -42,7 +42,6 @@ body {
     box-shadow: none;
 }
 
-
 a {
     text-decoration: none;
     color: var(--lightblue);
@@ -65,6 +64,12 @@ section {
     color: var(--lightblue);
     text-align: center;
     padding: 20px;
+}
+
+section h1 {
+    color: var(--accent);
+    font-size: 32px;
+    margin: 10vh 0 30px 0;
 }
 
 section:first-of-type {
@@ -232,6 +237,10 @@ body {
     max-width: 80vw;
 }
 
+.content h3 {
+    font-size: 25px;
+}
+
 .space {
     height: 10vh;
 }
@@ -327,6 +336,16 @@ model-viewer {
     flex-direction: column;
 }
 
-.download a{
+.download a {
     margin: 20px 0 20px 0;
+}
+
+#text2WK:hover,
+#textNSDAP:hover,
+#text1WL:hover {
+    cursor: pointer;
+}
+
+.visible {
+    visibility: visible !important;
 }
