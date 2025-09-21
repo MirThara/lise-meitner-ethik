@@ -1348,7 +1348,8 @@
             <div class="download">
                 <a href="https://github.com/MirThara/lise-meitner-ethik/releases/latest/download/lise-meitner.exe">Projekt
                     als EXE für Windows® herunterladen</a>
-                <a href="https://github.com/MirThara/lise-meitner-ethik/releases/latest/download/lise-meitner-ethik.app.zip">Projekt
+                <a
+                    href="https://github.com/MirThara/lise-meitner-ethik/releases/latest/download/lise-meitner-ethik.app.zip">Projekt
                     als APP für macOS herunterladen</a>
             </div>
         </div>
@@ -1392,6 +1393,24 @@
             preloader.style.transition = 'opacity 0.5s ease';
             setTimeout(() => preloader.style.display = 'none', 500);
         });
+
+
+        /***FULLSCREEN-HANDLER****/
+        document.addEventListener("keydown", (event) => {
+            if (event.key.toLowerCase() === "f") {
+                toggleFullscreen();
+            }
+        });
+
+        function toggleFullscreen() {
+            if (!document.fullscreenElement) {
+                document.documentElement.requestFullscreen().catch((err) => {
+                    console.error(`Fehler beim Aktivieren von Vollbild: ${err.message}`);
+                });
+            } else {
+                document.exitFullscreen();
+            }
+        }
     </script>
 </body>
 

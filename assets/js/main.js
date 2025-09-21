@@ -144,6 +144,3 @@ function checkAspect() {
         content.style.display = 'block';
     }
 }
-
-/* window.addEventListener('resize', checkAspect);
-checkAspect(); */
