@@ -12,7 +12,7 @@
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/MotionPathPlugin.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/DrawSVGPlugin.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollToPlugin.min.js"></script>
-    <script type="module" src="https://cdn.jsdelivr.net/npm/@google/model-viewer/dist/model-viewer.min.js"></script>
+    <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.0.0/model-viewer.min.js"></script>
 
     <!-- include general styles -->
     <link rel="stylesheet" href="assets/css/style.css">
@@ -277,8 +277,9 @@
                             </text>
                         </g>
                     </g>
-                    <text class="text" id="text2WK" fill="#C9E4FF" xml:space="preserve" style="white-space: pre"
-                        font-family="Cavolini" font-size="13" font-weight="bold" letter-spacing="0em">
+                    <text class="text text19-5" id="text2WK" fill="#C9E4FF" xml:space="preserve"
+                        style="white-space: pre" font-family="Cavolini" font-size="13" font-weight="bold"
+                        letter-spacing="0em">
                         <tspan x="30.6782" y="1787.85">Zweiter Weltkrieg </tspan>
                         <tspan x="49.8164" y="1806.85">1939 - 1945</tspan>
                     </text>
@@ -424,7 +425,7 @@
                             </text>
                         </g>
                     </g>
-                    <text class="text" id="textNSDAP" fill="#C9E4FF" xml:space="preserve"
+                    <text class="text text15-2" id="textNSDAP" fill="#C9E4FF" xml:space="preserve"
                         style="white-space: pre" font-family="Cavolini" font-size="14" font-weight="bold"
                         letter-spacing="0em">
                         <tspan x="487.5" y="1537.18">NSDAP an der Macht&#10;</tspan>
@@ -582,7 +583,18 @@
                                 <tspan x="1071.3" y="726.465">1918</tspan>
                             </text>
                         </g>
-                        <rect id="modell text11" x="82.5" y="812.5" width="396" height="314" stroke="#C9E4FF" />
+                        <!-- <rect id="modell text11" x="82.5" y="812.5" width="396" height="314" stroke="#C9E4FF" /> -->
+                        <!-- <foreignObject class="text text11" x="81.5" y="812.5" width="400" height="300" stroke="#FFFCE1">
+                          <div xmlns="http://www.w3.org/1999/xhtml" style="position: absolute; top: 812.5px; left: 81.5px">
+                                <p class="text text11 p11">Protactinium</p>
+                                <model-viewer class="m11" src="assets/models/element_091_protactinium.glb"
+                                    ios-src="assets/models/element_091_protactinium.usdz"
+                                    alt="3D Modell eines Wasserstoffatoms" ar ar-modes="scene-viewer webxr quick-look"
+                                    ar-scale="auto" autoplay="true" disable-automatic-render-scale
+                                    shadow-intensity="1" maximum-scale="1" auto-rotate style="width: 400px; height: 300px">
+                                </model-viewer>
+                            </div>
+                        </foreignObject> -->
                     </g>
                     <g class="text text10">
                         <line id="marker text10" x1="707.164" y1="852" x2="707.164" y2="785" stroke="#C9E4FF"
@@ -630,7 +642,7 @@
                             </text>
                         </g>
                     </g>
-                    <text class="text" id="text1WK" fill="#C9E4FF" xml:space="preserve"
+                    <text class="text text08-1" id="text1WK" fill="#C9E4FF" xml:space="preserve"
                         style="white-space: pre" font-family="Cavolini" font-size="14" font-weight="bold"
                         letter-spacing="0em">
                         <tspan x="509.04" y="873.183">erster Weltkrieg&#10;</tspan>
@@ -1193,6 +1205,14 @@
                         preserveAspectRatio="none" href="assets/img/meitner1.png" />
                 </defs>
             </svg>
+            <div class="text text11" style="position: absolute; top: 812.5px; left: 81.5px; pointer-events: all;">
+                <p class="text text11 p11">Protactinium</p>
+                <model-viewer class="m11" src="assets/models/element_091_protactinium.glb"
+                    ios-src="assets/models/element_091_protactinium.usdz" alt="3D Modell eines Protactiniumatoms" ar
+                    ar-modes="scene-viewer webxr quick-look" ar-scale="auto" autoplay="true" shadow-intensity="1"
+                    maximum-scale="1" auto-rotate style="width: 400px; height: 300px">
+                </model-viewer>
+            </div>
         </div>
     </section>
 

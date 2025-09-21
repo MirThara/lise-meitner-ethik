@@ -179,6 +179,7 @@ section:first-of-type {
     z-index: 98;
     margin: 0;
     max-width: 100vw;
+    pointer-events: none;
 }
 
 .ball {

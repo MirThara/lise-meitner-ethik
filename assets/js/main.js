@@ -81,25 +81,6 @@ const pulses = gsap
     .to(".text27", {}, 0.83)
     ;
 
-
-/**HOVER-Events 08-1, 15-2, 19-5**/
-const hoverMap = {
-    "text08-1": "text1WK",
-    "text15-2": "textNSDAP",
-    "text19-5": "text2WK"
-};
-
-Object.entries(hoverMap).forEach(([hoverClass, targetId]) => {
-    const hoverEl = document.querySelector(`.${hoverClass}`);
-    const targetEl = document.getElementById(targetId);
-
-    ["mouseover", "mouseleave"].forEach(event => {
-        hoverEl.addEventListener(event, () => {
-            targetEl.classList.toggle("visible");
-        });
-    });
-});
-
 // GSAP für Gesamtanimation der Timeline
 gsap.timeline({
     defaults: { duration: 1 },
