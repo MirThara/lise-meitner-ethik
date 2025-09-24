@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Einfaches Quiz</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            background: #f4f4f4;
+            text-align: center;
+        }
+
+        #quiz-container {
+            max-width: 500px;
+            margin: 50px auto;
+            padding: 20px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 0 10px #ccc;
+        }
+
+        button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+
+        .answers {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .answer {
+            display: block;
+            color: #fff;
+            font-weight: bold;
+            font-size: 17px;
+            width: 100%;
+            background: #04AA6D;
+            margin: 10px 0;
+            padding: 8px;
+            border: none;
+            border-radius: 5px;
+            text-align: center;
+            white-space: nowrap;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+
+        .answer:hover {
+            background: #059862;
+        }
+
+        .answer.correct {
+            background: #c8e6c9;
+        }
+
+        .answer.correct::after {
+            content: " ✔";
+            color: green;
+            font-weight: bold;
+        }
+
+        .answer.wrong {
+            background: #ffcdd2;
+        }
+
+        .answer.wrong::after {
+            content: " ✖";
+            color: red;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="quiz-container">
+        <h1>HTML Quiz</h1>
+        <p>Frage <span id="current"></span> von <span id="total"></span></p>
+        <div id="question"></div>
+        <div id="answers"></div>
+        <button id="next-btn">Nächste Frage</button>
+        <div id="result"></div>
+    </div>
+    <script src="script.js"></script>
+    <script>
+        const quizData = [
+            {
+                question: "Was bedeutet HTML?",
+                answers: [
+                    { text: "Hyper Text Markup Language", correct: true },
+                    { text: "Home Tool Markup Language", correct: false },
+                    { text: "Hyperlinks and Text Markup Language", correct: false }
+                ]
+            },
+            {
+                question: "Wähle das korrekte HTML-Element für die größte Überschrift",
+                answers: [
+                    { text: "<head>", correct: false },
+                    { text: "<h1>", correct: true },
+                    { text: "<heading>", correct: false },
+                    { text: "<h6>", correct: false }
+                ]
+            },
+            {
+                question: "Welches ist das korrekte HTML-Element, um einen Zeilenumbruch (neue Zeile anfangen) zu erstellen?",
+                answers: [
+                    { text: "<br>", correct: true },
+                    { text: "<lb>", correct: false },
+                    { text: "<break>", correct: false },
+                ]
+            },
+            {
+                question: "Wähle das korrekte HTML-Element, um <b>wichtigen</b> Text zu definieren",
+                answers: [
+                    { text: "<important>", correct: false },
+                    { text: "<b>", correct: true },
+                    { text: "<strong>", correct: true },
+                    { text: "<i>", correct: false },
+                ]
+            },
+            {
+                question: "Wähle das korrekte HTML-Element, um <i>kursiven</i> Text zu definieren",
+                answers: [
+                    { text: "<i>", correct: false },
+                    { text: "<em>", correct: true },
+                    { text: "<italic>", correct: false },
+                ]
+            },
+            {
+                question: "Ein img-Tag besteht aus einem öffnenden und einem schließenden Tag",
+                answers: [
+                    { text: "<Korrekt>", correct: false },
+                    { text: "<Falsch>", correct: true },
+                ]
+            },
+            {
+                question: "Welches HTML-Formulierung ist korrekt, um einen Verweis(Anker) auf eine andere Website zu erstellen",
+                answers: [
+                    { text: "<a name='http://www.lernsax.de'>LernSax</a>", correct: false },
+                    { text: "<a>http://www.lernsax.de", correct: false },
+                    { text: "<a url='http://www.lernsax.de'>LernSax.de", correct: false },
+                    { text: "<a href='http://www.lernsax.de'>LernSax.de", correct: true },
+                ]
+            },
+            {
+                question: "Welches Zeichen signalisiert ein schließendes Tag?",
+                answers: [
+                    { text: "^", correct: false },
+                    { text: "/", correct: true },
+                    { text: "<", correct: false },
+                    { text: "*", correct: false },
+                ]
+            },
+            {
+                question: "Wie wird ein Link in einem Neuen Tab/Browser-Fenster geöffnet?",
+                answers: [
+                    { text: "<a href='url' target='_blank'>", correct: true },
+                    { text: "<a href='url' target='new>'", correct: false },
+                    { text: "<a href='url' new>", correct: false },
+                ]
+            },
+            {
+                question: "Welche der folgenden Elemente sind alle <table>-Elemente?",
+                answers: [
+                    { text: "<table><tr><tt>", correct: false },
+                    { text: "<thead><body><tr>", correct: false },
+                    { text: "<table><tr><td>", correct: true },
+                    { text: "<table><head><tfoot>", correct: false },
+                ]
+            },
+            {
+                question: "Wie kann eine numerierte (geordnete) Liste erstellt werden?",
+                answers: [
+                    { text: "<ol>", correct: true },
+                    { text: "<dl>", correct: false },
+                    { text: "<list>", correct: false },
+                    { text: "<ul>", correct: false },
+                ]
+            },
+            {
+                question: "Wie kann eine ungeordnete Liste erstellt werden?",
+                answers: [
+                    { text: "<ol>", correct: false },
+                    { text: "<dl>", correct: false },
+                    { text: "<list>", correct: false },
+                    { text: "<ul>", correct: true },
+                ]
+            },
+            {
+                question: "Wie lautet das HTML, um ein Bild einzufügen?",
+                answers: [
+                    { text: "<img href='image.gif' alt='MyImage'>", correct: false },
+                    { text: "<image src='image.gif' alt='MyImage'>", correct: false },
+                    { text: "<img alt='MyImage>image.gif</img>", correct: false },
+                    { text: "<img src='image.gif' alt='MyImage'>", correct: true },
+                ]
+            },
+            {
+                question: "HTML-Kommentare starten mit <!-- und enden mit -->?",
+                answers: [
+                    { text: "Wahr", correct: true },
+                    { text: "Falsch", correct: false },
+
+                ]
+            },
+            {
+                question: "Welches HTML-Element definiert den Dokumententitel?",
+                answers: [
+                    { text: "<head>", correct: false },
+                    { text: "<title>", correct: true },
+                    { text: "<meta>", correct: false },
+
+                ]
+            },
+            {
+                question: "Welches HTML-Attribut spezifiziert einen alternativen Text für ein Bild, wenn dieses nicht angezeigt werden kann?",
+                answers: [
+                    { text: "longdesc", correct: false },
+                    { text: "alt", correct: true },
+                    { text: "src", correct: false },
+                    { text: "title", correct: false },
+                ]
+            },
+            {
+                question: "Welche Dokumenttypdeklarierung ist korrekt?",
+                answers: [
+                    { text: "<!DOCTYPE HTML5>", correct: false },
+                    { text: "<!DOCTYPE HTML PUBLIC '-//W3C//DTD HTML 5.0//EN'>", correct: false },
+                    { text: "<!DOCTYPE html>", correct: true },
+                ]
+            },
+            {
+                question: "Wie können Videos eingebunden werden?",
+                answers: [
+                    { text: "<video>", correct: true },
+                    { text: "<media>", correct: false },
+                    { text: "<movie>", correct: false },
+                ]
+            },
+            {
+                question: "Wie kann Audio eingebunden werden?",
+                answers: [
+                    { text: "<mp3>", correct: false },
+                    { text: "<audio>", correct: true },
+                    { text: "<sound>", correct: false },
+                ]
+            },
+            {
+                question: "Wie wird der Header, der nicht auf der Website angezeigt wird, deklariert?",
+                answers: [
+                    { text: "<head>", correct: false },
+                    { text: "<header>", correct: true },
+                    { text: "<top>", correct: false },
+                ]
+            },
+            {
+                question: "Wähle die richtige Schreibweise des Links, wenn sich die Datei im übergeordneten Verzeichnis befindet",
+                answers: [
+                    { text: "src='./datei.img'", correct: false },
+                    { text: "src='../../datei.img'", correct: false },
+                    { text: "src='../datei.img", correct: true },
+                    { text: "src='.././datei.img", correct: true },
+                ]
+            },
+        ];
+
+        let currentQuestionIndex = 0;
+        let score = 0;
+
+        const questionEl = document.getElementById("question");
+        const answersEl = document.getElementById("answers");
+        const nextBtn = document.getElementById("next-btn");
+        const resultEl = document.getElementById("result");
+        const number = document.getElementById('current');
+        const total = document.getElementById('total');
+
+        total.innerHTML = quizData.length;
+
+        function showQuestion() {
+            resetState();
+            let currentQuestion = quizData[currentQuestionIndex];
+            number.innerHTML = currentQuestionIndex + 1;
+            questionEl.innerText = currentQuestion.question;
+
+            currentQuestion.answers.forEach(answer => {
+                const button = document.createElement("button");
+                button.innerText = answer.text;
+                button.classList.add("answer");
+                button.addEventListener("click", () => selectAnswer(button, answer.correct));
+                answersEl.appendChild(button);
+            });
+        }
+
+        function resetState() {
+            nextBtn.style.display = "none";
+            while (answersEl.firstChild) {
+                answersEl.removeChild(answersEl.firstChild);
+            }
+        }
+
+        function selectAnswer(button, correct) {
+            if (correct) {
+                button.classList.add("correct");
+                score++;
+            } else {
+                button.classList.add("wrong");
+            }
+            Array.from(answersEl.children).forEach(b => {
+                b.disabled = true;
+                if (quizData[currentQuestionIndex].answers.find(a => a.text === b.innerText).correct) {
+                    b.classList.add("correct");
+                }
+            });
+            nextBtn.style.display = "block";
+        }
+
+        function showResult() {
+            resetState();
+            questionEl.innerText = "Quiz beendet!";
+            resultEl.innerText = `Du hast ${score} von ${quizData.length} Punkten erreicht.`;
+        }
+
+        nextBtn.addEventListener("click", () => {
+            currentQuestionIndex++;
+            if (currentQuestionIndex < quizData.length) {
+                showQuestion();
+            } else {
+                showResult();
+            }
+        });
+
+        showQuestion();
+
+    </script>
+</body>
+
+</html>
