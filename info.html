@@ -283,7 +283,7 @@
             resetState();
             let currentQuestion = quizData[currentQuestionIndex];
             number.innerHTML = currentQuestionIndex + 1;
-            questionEl.innerText = currentQuestion.question;
+            questionEl.innerHTML = currentQuestion.question;
 
             currentQuestion.answers.forEach(answer => {
                 const button = document.createElement("button");
