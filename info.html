@@ -140,9 +140,9 @@
                 question: "Welches HTML-Formulierung ist korrekt, um einen Verweis(Anker) auf eine andere Website zu erstellen",
                 answers: [
                     { text: "<a name='http://www.lernsax.de'>LernSax</a>", correct: false },
-                    { text: "<a>http://www.lernsax.de", correct: false },
-                    { text: "<a url='http://www.lernsax.de'>LernSax.de", correct: false },
-                    { text: "<a href='http://www.lernsax.de'>LernSax.de", correct: true },
+                    { text: "<a>http://www.lernsax.de</a>", correct: false },
+                    { text: "<a url='http://www.lernsax.de'>LernSax.de</a>", correct: false },
+                    { text: "<a href='http://www.lernsax.de'>LernSax.de</a>", correct: true },
                 ]
             },
             {
@@ -199,7 +199,7 @@
                 ]
             },
             {
-                question: "HTML-Kommentare starten mit <!-- und enden mit -->?",
+                question: "HTML-Kommentare starten mit &lt;!-- und enden mit --&gt;?",
                 answers: [
                     { text: "Wahr", correct: true },
                     { text: "Falsch", correct: false },
@@ -251,8 +251,8 @@
             {
                 question: "Wie wird der Header, der nicht auf der Website angezeigt wird, deklariert?",
                 answers: [
-                    { text: "<head>", correct: false },
-                    { text: "<header>", correct: true },
+                    { text: "<head>", correct: true },
+                    { text: "<header>", correct: false },
                     { text: "<top>", correct: false },
                 ]
             },
@@ -285,7 +285,14 @@
             number.innerHTML = currentQuestionIndex + 1;
             questionEl.innerHTML = currentQuestion.question;
 
-            currentQuestion.answers.forEach(answer => {
+            const shuffledAnswers = [...currentQuestion.answers];
+
+            for (let i = shuffledAnswers.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [shuffledAnswers[i], shuffledAnswers[j]] = [shuffledAnswers[j], shuffledAnswers[i]];
+            }
+
+            shuffledAnswers.forEach(answer => {
                 const button = document.createElement("button");
                 button.innerText = answer.text;
                 button.classList.add("answer");
